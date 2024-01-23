@@ -27,7 +27,7 @@ export class App extends Component {
   };
 
   // update the state when a button is clicked
-  handleButtonClick = type => {
+  handleClick = type => {
     this.setState(prevState => ({
       ...prevState,
       [type]: prevState[type] + 1,
@@ -44,10 +44,9 @@ export class App extends Component {
         <Section title="Please leave a feedback">
           <FeedbackOptions
             options={['good', 'neutral', 'bad']}
-            onLeaveFeedback={this.handleButtonClick}
+            onLeaveFeedback={this.handleClick}
           />
         </Section>
-
         <Section title="Statistics">
           {totalFeedback > 0 ? (
             <Statistics
